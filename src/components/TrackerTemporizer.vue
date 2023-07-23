@@ -1,19 +1,19 @@
 <template>
-  <div class="is-flex is-align-items-center is-justify-content-space-between">
-    <TrackerChronometer :classes="'display'" :timeInSeconds="timeInSeconds" />
-    <button class="button" @click="start" :disabled="isPlaying">
-        <span class="icon">
-            <i class="fas fa-play"></i>
-        </span>
-        <span>play</span>
-    </button>
-    <button class="button" @click="stop" :disabled="!isPlaying">
-        <span class="icon">
-            <i class="fas fa-stop"></i>
-        </span>
-        <span>stop</span>
-    </button>
-  </div>
+    <div class="is-flex is-align-items-center is-justify-content-space-between">
+        <TrackerChronometer :classes="'display'" :timeInSeconds="timeInSeconds" />
+        <button class="button is-success" @click="start" :disabled="isPlaying">
+            <span class="icon">
+                <i class="fas fa-play"></i>
+            </span>
+            <span>play</span>
+        </button>
+        <button class="button is-danger" @click="stop" :disabled="!isPlaying">
+            <span class="icon">
+                <i class="fas fa-stop"></i>
+            </span>
+            <span>stop</span>
+        </button>
+    </div>
 </template>
 
 
@@ -24,7 +24,7 @@ import TrackerChronometer from './TrackerChronometer.vue';
 export default defineComponent({
     name: "TrackerTemporizer",
     components: {
-      TrackerChronometer
+        TrackerChronometer
     },
     emits: ['onTemporizerEnds'],
     data() {
