@@ -1,7 +1,8 @@
 <template>
   <TaskBox>
     <div class="columns">
-      <div class="column is-7">{{ task.description || 'Task without description' }}</div>
+      <div class="column is-4">{{ task.description || 'Task without description' }}</div>
+      <div class="column is-3">{{ task.project?.name ?? 'N/D' }}</div>
       <div class="column">
         <TrackerChronometer :time-in-seconds="task.durationInSeconds" />
       </div>
@@ -20,7 +21,7 @@ export default defineComponent({
   components: {
     TrackerChronometer,
     TaskBox
-},
+  },
   props: {
     task: {
       type: Object as PropType<ITask>,
